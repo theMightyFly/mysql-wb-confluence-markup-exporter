@@ -212,7 +212,9 @@ function buildMarkupForSingleColumn(tbl, col, markup)
 	markup = markup .. "| " .. col.name .. " | " 
 	
 	-- column type
-	markup = markup .. col.simpleType.name 
+	if ( col.simpleType ~= nil ) then
+		markup = markup .. col.simpleType.name 
+	end	
 	
 	if ( col.length ~= -1 ) then
         markup = markup.. "(" ..col.length.. ")"
